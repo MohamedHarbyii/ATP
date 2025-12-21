@@ -22,7 +22,7 @@ class UpdateContentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nullable|url'
+            'url'=>'nullable|url',
         ];
     }
 }

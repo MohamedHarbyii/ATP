@@ -25,7 +25,7 @@ class ContentDB
     /**
      * Update Content
      */
-    public static function update($content, $data)
+    public static function update(Content $content, $data)
     {
         $content->update($data);
         
