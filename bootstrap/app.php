@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\HandlePutFormData;
 use App\Http\Middleware\test;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Application;
@@ -18,7 +19,8 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias(
             [
-                'test' => test::class,
+                // 'test' => test::class,
+                'update-request'=>HandlePutFormData::class,
             ]
         );
     })
