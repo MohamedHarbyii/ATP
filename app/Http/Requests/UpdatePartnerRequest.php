@@ -17,6 +17,7 @@ class UpdatePartnerRequest extends FormRequest
             'name' => 'sometimes|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'links' => 'nullable|array',
+            'description'=>'nullable'
         ];
     }
 }

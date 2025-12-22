@@ -9,6 +9,6 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 class Partner extends Model implements HasMedia
 {
     use InteractsWithMedia;
-    protected $fillable = ['name','links'];
+    protected $fillable = ['name','links','description'];
     protected $casts = ['links'=>'array'];
 }

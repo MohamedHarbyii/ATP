@@ -15,12 +15,12 @@ class StorePartnerRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            
-            // الصورة اختيارية، بس لو جت لازم تكون ملف صورة
+
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
 
-            // اللينكات لازم تكون array
             'links' => 'nullable|array',
+            'description' => 'nullable',
+
         ];
     }
 }
