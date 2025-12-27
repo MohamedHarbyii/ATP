@@ -21,6 +21,7 @@ class GameResource extends JsonResource
             'name' => $this->name,
             'description' => $this->description,
             'packages_number' => $this->packages_count ?? null,
+            'packages'=>$this->collection($this->whenLoaded('packages')),
             'image' => $lastMedia ? $lastMedia->getUrl() : null,
         ];
     }

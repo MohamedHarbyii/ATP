@@ -13,4 +13,5 @@ class Package extends Model implements HasMedia
     public function game() {
         return $this->belongsTo(Game::class);
     }
+
 }
