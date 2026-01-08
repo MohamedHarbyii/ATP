@@ -22,7 +22,7 @@ class CoachResource extends JsonResource
             'phone' => $this->phone,
             'image' => $lastMedia ? $lastMedia->getUrl() : null,
 
-            'game_name' => GameResource::collection($this->whenLoaded('games')),
+            'game' => GameResource::collection($this->whenLoaded('games')),
 
         ];
     }
