@@ -2,14 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\PackageDB;
+use App\Models\Package;
+use App\Http\Resources\PackageResource;
 use App\Http\Requests\StorepackageRequest;
 use App\Http\Requests\UpdatepackageRequest;
-use App\Http\Resources\PackageResource;
-use App\Models\Package;
-use App\PackageDB;
+use Illuminate\Routing\Controllers\Middleware;
 
 class PackagesController extends Controller
 {
+    //     public static function middleware(): array
+    // {
+    //     return [
+    //         new Middleware('auth:sanctum', null, ['index', 'show']),
+    //     ];
+    // }
     /**
      * Display a listing of the resource.
      */

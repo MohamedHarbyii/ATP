@@ -3,14 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Partner;
+use Illuminate\Http\Request;
 use App\PartnerDB; // كلاس اللوجيك
+use App\Http\Resources\PartnerResource;
 use App\Http\Requests\StorePartnerRequest;
 use App\Http\Requests\UpdatePartnerRequest;
-use App\Http\Resources\PartnerResource;
-use Illuminate\Http\Request;
+use Illuminate\Routing\Controllers\Middleware;
 
 class PartnerController extends Controller
 {
+    //     public static function middleware(): array
+    // {
+    //     return [
+    //         new Middleware('auth:sanctum', null, ['index', 'show']),
+    //     ];
+    // }
     /**
      * Display a listing of the resource.
      */

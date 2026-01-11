@@ -3,14 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\GameDB;
+use App\Models\Game;
+use App\ImageService;
+use App\Http\Resources\GameResource;
 use App\Http\Requests\StoreGameRequest;
 use App\Http\Requests\UpdateGameRequest;
-use App\Http\Resources\GameResource;
-use App\ImageService;
-use App\Models\Game;
+use Illuminate\Routing\Controllers\Middleware;
 
 class GamesController extends Controller
 {
+    //     public static function middleware(): array
+    // {
+    //     return [
+    //         new Middleware('auth:sanctum', null, ['index', 'show']),
+    //     ];
+    // }
     /**
      * Display a listing of the resource.
      */

@@ -2,14 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\ContentDB; // كلاس اللوجيك اللي عملناه
 use App\Models\Content;
+use App\Http\Resources\ContentResource;
 use App\Http\Requests\StoreContentRequest;
 use App\Http\Requests\UpdateContentRequest;
-use App\Http\Resources\ContentResource;
+use App\ContentDB; // كلاس اللوجيك اللي عملناه
+use Illuminate\Routing\Controllers\Middleware;
 
 class ContentController extends Controller
 {
+    // public static function middleware(): array
+    // {
+    //     return [
+    //         new Middleware('auth:sanctum', null, ['index', 'show']),
+    //     ];
+    // }
+
     /**
      * Display a listing of the resource.
      */
@@ -30,8 +38,8 @@ class ContentController extends Controller
         $content = ContentDB::store($request->validated());
 
         return $this->sendSuccess(
-            new ContentResource($content), 
-            'Content created successfully', 
+            new ContentResource($content),
+            'Content created successfully',
             201
         );
     }
@@ -54,7 +62,7 @@ class ContentController extends Controller
         $updatedContent = ContentDB::update($content, $request->validated());
 
         return $this->sendSuccess(
-            new ContentResource($updatedContent), 
+            new ContentResource($updatedContent),
             'Content updated successfully'
         );
     }
